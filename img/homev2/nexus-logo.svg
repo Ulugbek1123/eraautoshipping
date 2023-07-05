@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106.89 32">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .1em;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #e50828;
+      }
+
+      .cls-2 {
+        letter-spacing: .12em;
+      }
+
+      .cls-3 {
+        letter-spacing: .08em;
+      }
+
+      .cls-6 {
+        font-family: Alata-Regular, Alata;
+        font-size: 10.14px;
+      }
+
+      .cls-7 {
+        fill: #16356a;
+      }
+
+      .cls-8 {
+        letter-spacing: .12em;
+      }
+
+      .cls-5, .cls-9 {
+        letter-spacing: .12em;
+      }
+
+      .cls-9 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-4" d="m3.36,8.03s5.72,2.45,11.6,3.12l2.11,2.18s-6.85-1.41-13.71-5.3Z"/>
+    <path class="cls-4" d="m3.12,9.57s7.77,5.01,16.74,6.43l.24.35-1.68,1.79s-8.29-2.76-15.3-8.57Z"/>
+    <path class="cls-4" d="m2.89,10.98s5.76,5.55,13.83,8.72l-1.56,1.65s-6.72-4.2-12.27-10.37Z"/>
+    <path class="cls-4" d="m35.93,10.06l-.1,4.14-9,.46-2.29-2.98s7.02-.21,11.39-1.62Z"/>
+    <path class="cls-4" d="m35.42,16.35s-.54,2.16-1.75,4.2c0,0-6.32.03-8.43-.87-2.11-.9,3.29-3.19,3.29-3.19,0,0,.85.71,6.89-.13Z"/>
+    <path class="cls-4" d="m32.09,22.95s-2.43,3.05-4.63,4.18c0,0-4.66-1.35-6.29-2.66l2.43-2.76s0,.6,8.48,1.23Z"/>
+    <polygon class="cls-7" points="10.3 4.98 18.59 4.98 29.9 16.34 18.59 27.72 10.35 27.72 21.72 16.35 10.3 4.98"/>
+  </g>
+  <text class="cls-6" transform="translate(46.58 13.86)"><tspan class="cls-9" x="0" y="0">ERA</tspan><tspan class="cls-5" x="21.54" y="0"> </tspan><tspan class="cls-1" x="25.25" y="0">AU</tspan><tspan class="cls-3" x="40.95" y="0">T</tspan><tspan class="cls-2" x="47.33" y="0">O</tspan><tspan class="cls-8" x="56.99" y="0"> </tspan><tspan class="cls-9"><tspan x="0" y="12.16">SHIPPING</tspan></tspan></text>
+</svg>

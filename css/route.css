@@ -1,0 +1,1863 @@
+.calculator p {
+  margin: 0;
+}
+.calculator .hidden {
+  opacity: 0 !important;
+}
+.calculator .form-group {
+  position: relative;
+  flex: 0 1 12.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.calculator .list-group {
+  position: absolute;
+  z-index: 99999;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  background: #f6f8ff;
+}
+.calculator .list-group-item {
+  height: 50px;
+  line-height: 25px;
+  padding: 0.75rem;
+  border-top: 1px solid #e6eefa !important;
+  border-left: 1px solid #e6eefa !important;
+  border-right: 1px solid #e6eefa !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.calculator .list-group-item:last-child {
+  border-bottom: 1px solid #e6eefa !important;
+}
+.calculator .list-group-item.hover {
+  background: #ff0031 !important;
+}
+.calculator .list-group-item:hover,
+.calculator .list-group-item:focus {
+  background: #ff0031 !important;
+}
+.calculator .list-group-item p {
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: #00326f !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.calculator .list-group-item:before {
+  height: 50%;
+  width: 12.5px;
+  position: absolute;
+  top: calc(25%);
+  left: 10px;
+  content: "";
+}
+.calculator .list-group-item:last-child {
+  margin-bottom: 0;
+}
+.calculator .address_input.fill {
+  border-radius: 25px 25px 0 0 !important;
+}
+.calculator .address_input.fill ~ .list-group {
+  overflow: hidden;
+}
+.calculator .location-form {
+  height: 100%;
+  background: #f4f7fb;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+.calculator .location-form__tabs {
+  display: flex;
+  align-items: center;
+  background-color: #f4f7fb;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  padding: 30px;
+  padding-bottom: 0;
+}
+.calculator .location-form__tabs--link {
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  color: #979cb6;
+  cursor: pointer;
+  margin-right: 30px;
+  position: relative;
+}
+.calculator .location-form__tabs--link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  border: 1px solid #808080;
+  background-color: #f4f7fb;
+}
+.calculator .location-form__tabs--link p {
+  padding-left: 30px;
+}
+.calculator .location-form__tabs--link.active p {
+  color: #09265e;
+}
+.calculator .location-form__tabs--link.active::before {
+  border: 1px solid #09265e;
+}
+.calculator .location-form__tabs--link.active::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #09265e;
+}
+.calculator .location-form__content {
+  position: relative;
+  flex: 1;
+  width: 100%;
+}
+.calculator .location-form__content > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.1s ease-in-out;
+}
+.calculator .location-form__content > div.active {
+  z-index: 1;
+}
+.calculator .location-form .route-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+.calculator .location-form .route-form > p,
+.calculator .location-form .route-form h2 {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  padding-left: 30px;
+}
+.calculator .location-form .route-form form.select-route,
+.calculator .location-form .route-form form.track-shipment {
+  width: 100%;
+  padding: 30px;
+  display: none;
+  margin-bottom: 3rem;
+}
+.calculator .location-form .route-form form.select-route.active,
+.calculator .location-form .route-form form.track-shipment.active {
+  transition: display 1s;
+  display: block;
+}
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  > .form-row
+  > [class*="col"],
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  > .form-row
+  > [class*="col"] {
+  height: 81px;
+}
+.calculator .location-form .route-form form.select-route > img,
+.calculator .location-form .route-form form.track-shipment > img {
+  position: absolute;
+  top: -34px;
+  right: 0px;
+}
+.calculator .location-form .route-form form.select-route .form-group,
+.calculator .location-form .route-form form.track-shipment .form-group {
+  margin-bottom: 0;
+  margin: 1rem 0;
+}
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group.from::after,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group.from::after {
+  content: url("../img/calculator/4.svg");
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  z-index: 9999;
+}
+.calculator .location-form .route-form form.select-route .form-group.to::after,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group.to::after {
+  content: url("../img/calculator/3.svg");
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  z-index: 9999;
+}
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group.time::after,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group.time::after {
+  content: url("../img/calculator/2.svg");
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  z-index: 9999;
+}
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group.vehicle::after,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group.vehicle::after {
+  content: url("../img/calculator/1.svg");
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  z-index: 9999;
+}
+.calculator .location-form .route-form form.select-route .form-group label,
+.calculator .location-form .route-form form.track-shipment .form-group label {
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #09265e;
+  margin-left: 15%;
+  align-self: start;
+  margin-top: 0px !important;
+}
+.calculator .location-form .route-form form.select-route .form-group input,
+.calculator .location-form .route-form form.track-shipment .form-group input {
+  background: #fff !important;
+  border: 1px solid #e6eefa !important;
+  box-sizing: border-box !important;
+  border-radius: 11px !important;
+  height: 4rem;
+  width: 100%;
+  padding: 0px 45px !important;
+  font-weight: 600;
+  font-size: 15px;
+  color: #09265e;
+}
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group
+  input
+  ::placeholder,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group
+  input
+  ::placeholder {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 20px;
+  color: #979cb6;
+}
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group
+  input:focus,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group
+  input:focus {
+  background: #fff;
+}
+.calculator .location-form .route-form form.select-route .form-group input.time,
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group
+  input.size-of-car,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group
+  input.time,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group
+  input.size-of-car {
+  cursor: pointer;
+  background: transparent;
+  pointer-events: none;
+}
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group
+  input.pickup,
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group
+  input.delivery,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group
+  input.pickup,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group
+  input.delivery {
+  position: relative;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group
+  input.pickup:focus,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group
+  input.pickup:focus {
+  z-index: 1060;
+}
+.calculator
+  .location-form
+  .route-form
+  form.select-route
+  .form-group
+  input.delivery:focus,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  .form-group
+  input.delivery:focus {
+  z-index: 1060;
+}
+.calculator .location-form .route-form form.select-route button.calculate-cost,
+.calculator .location-form .route-form form.select-route button.track-shipment,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  button.calculate-cost,
+.calculator
+  .location-form
+  .route-form
+  form.track-shipment
+  button.track-shipment {
+  width: 100%;
+}
+.calculator .location-form .route-form .dropdown {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+}
+.calculator .location-form .route-form .dropdown .dropdown-toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+}
+.calculator .location-form .route-form .dropdown button:focus {
+  outline: none;
+}
+.calculator .location-form .route-form .dropdown input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.calculator .location-form .route-form .dropdown .caret:before {
+  background: url("../img/calculator/step-1/caret.svg") no-repeat center;
+  transition: transform 0.4s;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  background-size: contain;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: calc(50% - 6px);
+  right: 1.15rem;
+  content: "";
+}
+.calculator .location-form .route-form .dropdown .dropdown-menu {
+  position: absolute;
+  z-index: 10000;
+  max-width: unset;
+  top: 4rem !important;
+  left: 0px !important;
+  padding: 0px !important;
+  transform: translate3d(0px, -3px, 0px) !important;
+  margin: 0px !important;
+  border: 1px solid #e6eefa;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+}
+.calculator .location-form .route-form .dropdown .dropdown-menu .header {
+  display: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown
+  .dropdown-menu
+  button.continue {
+  display: none;
+}
+.calculator .location-form .route-form .dropdown .dropdown-menu .dropdown-item {
+  padding-left: 1rem;
+  height: 50px;
+  line-height: 50px;
+  transition: background-color 0.1s;
+  display: inline-block;
+  float: none !important;
+  cursor: pointer;
+  padding-top: 0px;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: #00326f !important;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown
+  .dropdown-menu
+  .dropdown-item:hover,
+.calculator
+  .location-form
+  .route-form
+  .dropdown
+  .dropdown-menu
+  .dropdown-item:focus {
+  background-color: #ff0031;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown
+  .dropdown-menu
+  .dropdown-item:not(:first-child) {
+  border-top: 1px solid #e6eefa;
+}
+.calculator .location-form .route-form .dropdown.time.show input {
+  border-radius: 6px 6px 0 0 !important;
+}
+.calculator .location-form .route-form .dropdown.time.show #ui-datepicker-div {
+  position: absolute !important;
+  top: 4rem !important;
+  left: 0px !important;
+  font-family: Montserrat;
+  border: none;
+  padding: 10px;
+  width: 320px;
+  z-index: 10000 !important;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-widget-header {
+  border: none;
+  background: transparent;
+  color: #00326f;
+  font-weight: bold;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-widget-header
+  .ui-datepicker-next {
+  top: 0px;
+  right: 10px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-widget-header
+  .ui-datepicker-next:hover {
+  border: none;
+  background: transparent;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-widget-header
+  .ui-datepicker-next
+  .ui-icon {
+  transition: background-image 0.05s;
+  background-image: url("../img/calculator/step-1/right-arrow.svg") !important;
+  background-position: center;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-widget-header
+  .ui-datepicker-next
+  .ui-icon:hover {
+  background-image: url("../img/calculator/step-1/right-arrow-green.svg") !important;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-widget-header
+  .ui-datepicker-prev {
+  top: 0px;
+  left: 5px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-widget-header
+  .ui-datepicker-prev:hover {
+  border: none;
+  background: transparent;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-widget-header
+  .ui-datepicker-prev
+  .ui-icon {
+  transition: background-image 0.05s;
+  background-image: url("../img/calculator/step-1/left-arrow.svg") !important;
+  background-position: center;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-widget-header
+  .ui-datepicker-prev
+  .ui-icon:hover {
+  background-image: url("../img/calculator/step-1/left-arrow-green.svg") !important;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-datepicker-calendar
+  th {
+  color: #00326f;
+  font-weight: 800;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-state-default {
+  transition: background-color 0.2s;
+  text-align: center !important;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  color: #00326f;
+  width: 40px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-state-default:hover {
+  background: rgba(0, 50, 111, 0.6);
+  color: #fff;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.time.show
+  #ui-datepicker-div
+  .ui-state-active {
+  background: #00326f !important;
+  color: #ff0031 !important;
+  box-shadow: 5px 4px 14px rgba(9, 38, 94, 0.2);
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-toggle {
+  width: 100%;
+}
+.calculator .location-form .route-form .dropdown.size-of-car.show input {
+  border-radius: 6px 6px 0 0 !important;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu {
+  padding: 10px !important;
+  padding-bottom: 10px !important;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item {
+  position: relative;
+  display: inline-block;
+  width: 90px !important;
+  height: 90px !important;
+  border: 0;
+  border-radius: 20px;
+  margin: 3px;
+  padding: 0px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item
+  svg {
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 50px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.small-car {
+  order: 1;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.small-car
+  svg {
+  width: 50px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.small-suv {
+  order: 5;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.small-suv
+  svg {
+  width: 50px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.medium-pickup {
+  order: 10;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.medium-pickup
+  svg {
+  width: 70px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.mini-van {
+  order: 9;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.mini-van
+  svg {
+  width: 70px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.midsize-car {
+  order: 2;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.midsize-car
+  svg {
+  width: 65px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.midsize-suv {
+  order: 5;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.midsize-suv
+  svg {
+  width: 60px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.large-pickup {
+  order: 11;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.large-pickup
+  svg {
+  width: 80px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.motorcycle {
+  order: 18;
+  display: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.motorcycle
+  svg {
+  width: 40px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.large-car {
+  order: 3;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.large-car
+  svg {
+  width: 70px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.large-suv {
+  order: 7;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.large-suv
+  svg {
+  width: 70px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.dually-pickup {
+  order: 17;
+  display: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.dually-pickup
+  svg {
+  width: 85px;
+  bottom: 32px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.fullsize-van {
+  order: 13;
+  display: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.fullsize-van
+  svg {
+  width: 85px;
+  bottom: 35px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.sports-car {
+  order: 4;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.sports-car
+  svg {
+  width: 70px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.hypercar {
+  order: 8;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.hypercar
+  svg {
+  width: 80px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.travel-trailer {
+  order: 14;
+  display: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.travel-trailer
+  svg {
+  width: 75px;
+  bottom: 35px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.boat-trailer {
+  order: 15;
+  display: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.boat-trailer
+  svg {
+  width: 75px;
+  bottom: 35px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.golf-cart {
+  order: 16;
+  display: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.golf-cart
+  svg {
+  width: 50px;
+  bottom: 35px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle {
+  order: 12;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle
+  svg {
+  width: 60px;
+  bottom: 25px;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle:hover {
+  transition: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle:hover
+  svg
+  path,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle:hover
+  svg
+  rect,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle:hover
+  svg
+  polygon {
+  fill: #00326f;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle:hover
+  svg
+  circle,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle:hover
+  svg
+  line,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle:hover
+  svg
+  polyline {
+  stroke: #00326f;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.more-vehicle:hover
+  span {
+  color: #00326f;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item
+  span {
+  position: absolute;
+  display: block;
+  bottom: 3px;
+  height: 30px;
+  line-height: 15px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 10.5px;
+  color: #000046;
+  text-align: center;
+  pointer-events: none;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.selected,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item:hover {
+  transition: all 0.1s;
+  background-color: #00326f;
+  box-shadow: 15px 14px 34px rgba(9, 38, 94, 0.2);
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.selected
+  svg
+  path,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.selected
+  svg
+  rect,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.selected
+  svg
+  polygon,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item:hover
+  svg
+  path,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item:hover
+  svg
+  rect,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item:hover
+  svg
+  polygon {
+  fill: #ff0031;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.selected
+  svg
+  circle,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.selected
+  svg
+  line,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.selected
+  svg
+  polyline,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item:hover
+  svg
+  circle,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item:hover
+  svg
+  line,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item:hover
+  svg
+  polyline {
+  stroke: #ff0031;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.selected
+  span,
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item:hover
+  span {
+  color: #fff;
+}
+.calculator
+  .location-form
+  .route-form
+  .dropdown.size-of-car.show
+  .dropdown-menu
+  .dropdown-item.selected:before {
+  background: url("../img/calculator/step-1/tick-green.svg") no-repeat;
+  background-position: 0px -10px;
+  background-size: 90px;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  z-index: 10000;
+  top: -10px;
+  right: -15px;
+  content: "";
+}
+.calculator .location-form .route-form .dropdown-toggle::after {
+  display: none;
+}
+.calculator .location-form .track-shipment {
+  height: 100%;
+}
+.calculator .location-form .track-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.calculator .location-form .track-form label {
+  padding-left: 1rem;
+  font-weight: 500;
+  font-size: 14px;
+}
+.calculator .location-form .track-form > p {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  padding-left: 30px;
+}
+.calculator .location-form .track-form input {
+  background: #fff !important;
+  border: 1px solid #e6eefa !important;
+  box-sizing: border-box !important;
+  border-radius: 6px !important;
+  height: 4rem;
+  width: 100%;
+  padding: 0px 20px !important;
+  font-weight: 600;
+  font-size: 15px;
+  color: #09265e;
+}
+.calculator .location-form .track-form input ::placeholder {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 20px;
+  color: #979cb6;
+}
+.calculator .location-form .track-form input:focus {
+  background: #fff;
+}
+.calculator .location-form #route-confirm,
+.calculator .location-form #track-confirm {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: #ff0031;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+.calculator #route-map {
+  pointer-events: none;
+  position: relative;
+  width: 100%;
+}
+.calculator #route-map .state path:not(.route-map__path--selected) {
+  fill: #e5e6eb !important;
+}
+.calculator .route-map__summary-cta {
+  display: none !important;
+}
+.calculator .route-map__review {
+  display: none;
+}
+.calculator .route-map .state path.route-map__path--selected {
+  fill: #c3cbf3 !important;
+}
+.calculator .route-map__tooltip {
+  display: none !important;
+}
+.calculator .route-map__summary {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: rgba(0, 50, 111, 0.6);
+  transition: opacity 0.2s;
+}
+.calculator .route-map__summary::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  z-index: 1;
+  height: 1px;
+  border-top: 2px dashed #09265e;
+}
+.calculator .route-map__summary-map-marker,
+.calculator .route-map__summary-close,
+.calculator .route-map__summary-trailblazer {
+  display: none;
+}
+.calculator .route-map__summary-location {
+  height: 3rem;
+  padding: 0.75rem 1rem;
+  background-color: #09265e;
+  color: #fff;
+  border-radius: 2rem;
+  z-index: 2;
+  min-width: 5rem;
+  text-align: center;
+}
+.calculator .route-map__summary-distance {
+  color: rgba(0, 50, 111, 0.6);
+}
+.calculator .route-map__summary-distance > span {
+  position: relative;
+  font-weight: 600;
+  padding: 0.5rem;
+  background-color: #f2f2f6;
+  color: #09265e;
+  border-radius: 2rem;
+  z-index: 2;
+}
+.calculator .modal-toggle {
+  color: #96d701;
+}
+.calculator .modal-toggle:hover,
+.calculator .modal-toggle:active,
+.calculator .modal-toggle:focus {
+  text-decoration: none;
+  cursor: pointer;
+  color: #96d701;
+}
+.calculator .modal-target {
+  position: fixed;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.1s;
+  background-color: rgba(209, 216, 230, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calculator .modal-target .modal-body {
+  background-color: white;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0px 14px 104px rgba(18, 44, 72, 0.1);
+  border-radius: 4px;
+  padding: 32px;
+}
+.calculator .modal-target .modal-body h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-align: center;
+  color: #09265e;
+}
+.calculator .modal-target .modal-body p {
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  color: #979cb6;
+}
+.calculator .modal-target .modal-body .call-now {
+  background: #3f95f7;
+  border-radius: 30px;
+  padding: 15px;
+  text-decoration: none;
+}
+.calculator .modal-target .modal-body .call-now span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.calculator .modal-target .modal-toggle {
+  position: absolute;
+  top: 2rem;
+  left: calc(100% - 3rem);
+  font-size: 1.5rem;
+  color: #000046;
+  z-index: inherit;
+}
+.calculator .modal-target.shown {
+  opacity: 1;
+  z-index: 999999999;
+}
+@media screen and (max-width: 468px) {
+  .calculator .location-form__tabs {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
+  .calculator .location-form__tabs--link {
+    height: 2.5rem;
+    font-size: 14px;
+  }
+  .calculator .location-form .route-form {
+    padding: 1.2rem 0;
+  }
+  .calculator .location-form .route-form > p,
+  .calculator .location-form .route-form h2 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+  }
+  .calculator .location-form .route-form form.select-route {
+    margin-bottom: 1.8rem;
+    padding: 12px 20px;
+  }
+  .calculator .location-form .route-form form.select-route .form-group {
+    margin: 0.6rem 0;
+  }
+  .calculator
+    .location-form
+    .route-form
+    form.select-route
+    .form-group
+    input.pickup,
+  .calculator
+    .location-form
+    .route-form
+    form.select-route
+    .form-group
+    input.delivery,
+  .calculator
+    .location-form
+    .route-form
+    form.select-route
+    .form-group
+    input.time,
+  .calculator
+    .location-form
+    .route-form
+    form.select-route
+    .form-group
+    input.size-of-car {
+    height: 3.55rem;
+    font-size: 14px;
+  }
+  .calculator .location-form .route-form form.select-route .form-group label {
+    margin-left: 12%;
+  }
+  .calculator .location-form #route-confirm {
+    height: 3rem;
+  }
+  .calculator .cstep-1 .form-wrapper {
+    flex-direction: column;
+  }
+  .calculator .cstep-1 .form-wrapper .form-group {
+    width: 100%;
+    flex: 1;
+  }
+  .calculator .cstep-1 .form-wrapper .form-group.fill {
+    width: 100%;
+  }
+  .calculator .cstep-1 .form-wrapper .modal-body {
+    height: 30%;
+  }
+  .calculator .cstep-1 .form-wrapper .dropdown {
+    width: 100%;
+  }
+  .calculator .cstep-1 .form-wrapper .dropdown .dropdown-toggle {
+    width: 100%;
+  }
+  .calculator .cstep-1 .form-wrapper .dropdown .popup-bg {
+    display: none;
+  }
+  .calculator .cstep-1 .form-wrapper .dropdown .popup-bg .btn-close {
+    display: none;
+  }
+  .calculator .cstep-1 .form-wrapper .dropdown.time.show .dropdown-menu {
+    padding: 10px !important;
+  }
+  .calculator .cstep-1 .form-wrapper .dropdown.time.show #ui-datepicker-div {
+    position: relative !important;
+    box-shadow: none !important;
+    width: calc(100% - 40px);
+    max-width: 500px;
+    padding: 20px;
+    transform: unset !important;
+    top: unset !important;
+    left: unset !important;
+    border-radius: 25px;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.time.show
+    #ui-datepicker-div
+    .ui-state-default {
+    width: 100%;
+  }
+  .calculator .cstep-1 .form-wrapper .dropdown.time.show .btn-close {
+    margin-top: -80px !important;
+  }
+  .calculator .cstep-1 .form-wrapper .dropdown.size-of-car.show {
+    position: relative !important;
+    width: 100% !important;
+    overscroll-behavior: contain;
+    top: 0;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu {
+    margin-top: -35px !important;
+    max-height: 75vh;
+    overflow: auto;
+    padding-top: 0px !important;
+    max-width: 365px;
+    width: calc(100vw - 20px) !important;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item {
+    transform: scale(0.95);
+    margin: 3px -2px;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.small-car {
+    order: 1;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.small-suv {
+    order: 7;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.medium-pickup {
+    order: 10;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.mini-van {
+    order: 6;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.midsize-car {
+    order: 2;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.midsize-suv {
+    order: 8;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.large-pickup {
+    order: 11;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.motorcycle {
+    order: 15;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.large-car {
+    order: 3;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.large-suv {
+    order: 9;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.dually-pickup {
+    order: 14;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.fullsize-van {
+    order: 17;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.sports-car {
+    order: 4;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.hypercar {
+    order: 5;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.travel-trailer {
+    order: 13;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.boat-trailer {
+    order: 12;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .dropdown-item.golf-cart {
+    order: 16;
+  }
+  .calculator
+    .cstep-1
+    .form-wrapper
+    .dropdown.size-of-car.show
+    .popup-bg
+    .dropdown-menu
+    .header {
+    z-index: 10001;
+    background: #fff;
+    width: calc(100% + 20px);
+    padding: 10px 20px 10px 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-bottom: 20px;
+    border-radius: 25px 25px 0px 0px;
+    line-height: 40px;
+  }
+  .calculator [class*="cstep-"] .dropdown.show .popup-bg {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    background-color: rgba(209, 216, 230, 0.8);
+    height: 100vh;
+    width: 100vw;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 99999999;
+    pointer-events: auto;
+  }
+  .calculator [class*="cstep-"] .dropdown.show .popup-bg .dropdown-menu {
+    position: relative !important;
+    max-height: 75vh !important;
+    margin: 0px !important;
+    max-width: 420px;
+    min-width: unset;
+    width: calc(100vw - 40px) !important;
+    border-radius: 25px !important;
+    overscroll-behavior: contain !important;
+  }
+  .calculator
+    [class*="cstep-"]
+    .dropdown.show
+    .popup-bg
+    .dropdown-menu
+    .header {
+    display: block;
+    border-bottom: 1px solid rgba(151, 156, 182, 0.1);
+    width: calc(100% - 40px);
+    margin: 0px 20px;
+    margin-bottom: 5px;
+    height: 50px;
+    line-height: 45px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    color: #09265e;
+  }
+  .calculator
+    [class*="cstep-"]
+    .dropdown.show
+    .popup-bg
+    .dropdown-menu
+    button.continue {
+    display: block;
+    position: relative;
+    width: 180px;
+    margin-left: calc(50% - 90px);
+    margin-top: 20px;
+    margin-bottom: -45px;
+  }
+  .calculator [class*="cstep-"] .dropdown.show .popup-bg .btn-close {
+    cursor: pointer;
+    position: relative;
+    background-image: url("../img/calculator/step-1/x-mark.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    display: block;
+  }
+}
